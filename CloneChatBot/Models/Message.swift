@@ -41,7 +41,5 @@ class Message: Hashable {
         self.options = options
     }
     
-    
-    
 }
 

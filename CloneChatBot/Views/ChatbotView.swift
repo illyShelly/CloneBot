@@ -7,24 +7,14 @@
 
 import SwiftUI
 
-class ChatbotViewModel: ObservableObject {
-    @Published var database: [Message] // declare var
-    
-    // The same as: var database: [Message] = []
-    init(database: [Message] = []) { // init as empty arr
-        self.database = database
-    }
-}
-
-
 struct ChatbotView: View {
     //    Initialize ChatbotVM
     @StateObject var chatbotVM: ChatbotViewModel = ChatbotViewModel()
     
-    @State var currentMessage: Message = Message(id: "0", contents: ["Welcome To Our Chatbot"], owner: .bot, options: [.init(key: "1", answer: "Hello!")])
+//    @State var currentMessage: Message = Message(id: "0", contents: ["Welcome To Our Chatbot"], owner: .bot, options: [.init(key: "1", answer: "Hello!")])
     
 //    @State var bubbles: [Bubble] = [Bubble(info: "Welcome To Our Chatbot")]
-    @State var bubbles: [Bubble] = []
+//    @State var bubbles: [Bubble] = [] // moved as Published into VM
 
     @State var userChoice: String = ""
     
@@ -36,7 +26,7 @@ struct ChatbotView: View {
                     .foregroundColor(.pink)
                     .font(.title)
                     .fontWeight(.semibold)
-                Text("Welcome")
+                Text("Re-Turn")
                     .font(.title)
                     .foregroundColor(.indigo)
                     .fontWeight(.bold)
@@ -46,7 +36,7 @@ struct ChatbotView: View {
             ScrollView {
 //                Text(currentMessage.contents.first ?? "Welcome")
                 //Text(currentMessage.owner.rawValue) // as default is 'bot'
-                ForEach(bubbles) { bubble in
+                ForEach(chatbotVM.bubbles) { bubble in
                     if let sender = bubble.who {
                         switch sender {
                         case .bot:
@@ -95,7 +85,7 @@ struct ChatbotView: View {
             //  User's answer - based on options of current message
             HStack {
                 // Show all options as buttons in the currentMessage
-                if let userOptions = currentMessage.options {
+                if let userOptions = chatbotVM.currentMessage.options {
                     ForEach(userOptions, id: \.self) { option in
                         
                         // More than 1 option show next to each other
@@ -104,19 +94,24 @@ struct ChatbotView: View {
                             VStack {
                                 Button {
                                     // Post clicked content as message
-                                    postMessage(message: option.answer, sender: .user)
+                                    withAnimation(.linear(duration: 0.35)) {
+                                        chatbotVM.postMessage(message: option.answer, sender: .user)
+                                    }
+                                   
                                     userChoice = option.key
                                 //  Assign a nextMessage into currentMessage
-                                    currentMessage = getNextMessage(choice: userChoice)
+                                    chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
+                                    userChoice = ""
                                 } label: {
                                     Text(option.answer)
                                 }
                                 .padding(.horizontal, 15)
                                 .padding(.vertical, 10)
-                                .background(.indigo)
                                 .foregroundColor(.white)
-                                .cornerRadius(10)
                                 .font(.system(size: 19))
+                                
+                                .background(.indigo)
+                                .cornerRadius(10)
 
                             }
                         default:
@@ -124,19 +119,23 @@ struct ChatbotView: View {
                             HStack {
                                 Button {
                                     // Post clicked content as message
-                                    postMessage(message: option.answer, sender: .user)
+                                    withAnimation(.default) {
+                                        chatbotVM.postMessage(message: option.answer, sender: .user)
+                                    }
                                     userChoice = option.key
                                 //  Assign a nextMessage into currentMessage
-                                    currentMessage = getNextMessage(choice: userChoice)
+                                    chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
+                                    userChoice = ""
                                 } label: {
                                     Text(option.answer)
                                 }
                                 .padding(.horizontal, 15)
                                 .padding(.vertical, 10)
-                                .background(.pink)
                                 .foregroundColor(.white)
-                                .cornerRadius(5)
                                 .font(.system(size: 19))
+
+                                .background(.pink)
+                                .cornerRadius(5)
                                 // smaller font for more btns
                                 .padding(.trailing, 5) // space between btns
                             }
@@ -150,47 +149,19 @@ struct ChatbotView: View {
 
         } // Main VS
     }
-        func getNextMessage(choice: String) -> Message {
-            var nextMessage: Message = .init(id: "", contents: [""])
-            
-            // database.first(where: { $0.id == message.id })
-            for message in chatbotVM.database {
-                if message.id == choice {
-                    nextMessage = message
-                }
-            }
-            return nextMessage
-        }
-        
-        //    Post message as .bot or as .user
-        func postMessage(message: String, sender: Sender) {
-            withAnimation {
-                bubbles.append(Bubble(info: message, who: sender))
-                userChoice = ""
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation {
-                    // Create bubble/s related to current message content
-                    for note in currentMessage.contents {
-                        bubbles.append(Bubble(info: note, who: .bot))
-                    }
-                    // bubbles.append(Bubble(info: currentMessage.contents.first! ?? "test"))
-                }
-            }
-        }
+       
 }
     
-enum Sender {
-    case bot
-    case user
-}
-    
-struct Bubble: Identifiable {
-    var id: String = "\(UUID())"
-    var info: String
-    var who: Sender = .bot
-}
+//enum Sender {
+//    case bot
+//    case user
+//}
+//    
+//struct Bubble: Identifiable {
+//    var id: String = "\(UUID())"
+//    var info: String
+//    var who: Sender = .bot
+//}
 
 struct ChatbotView_Previews: PreviewProvider {
     static var previews: some View {

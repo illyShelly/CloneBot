@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3732664929A7EBF500B77358 /* ChatBotView+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732664829A7EBF500B77358 /* ChatBotView+mock.swift */; };
 		37435EE129B12B8C00488202 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37435EE029B12B8C00488202 /* MessageManager.swift */; };
+		37435EE329B130FE00488202 /* ChatbotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37435EE229B130FE00488202 /* ChatbotViewModel.swift */; };
 		37988C6F29A634C4008B5F8E /* Message.json in Resources */ = {isa = PBXBuildFile; fileRef = 37988C6E29A634C4008B5F8E /* Message.json */; };
 		37988C7429A63584008B5F8E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37988C7329A63584008B5F8E /* TestView.swift */; };
 		37988C7629A6362B008B5F8E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37988C7529A6362B008B5F8E /* Message.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3732664829A7EBF500B77358 /* ChatBotView+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatBotView+mock.swift"; sourceTree = "<group>"; };
 		37435EE029B12B8C00488202 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		37435EE229B130FE00488202 /* ChatbotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewModel.swift; sourceTree = "<group>"; };
 		37988C6E29A634C4008B5F8E /* Message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Message.json; sourceTree = "<group>"; };
 		37988C7329A63584008B5F8E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		37988C7529A6362B008B5F8E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -69,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				37988C7529A6362B008B5F8E /* Message.swift */,
-				37435EE029B12B8C00488202 /* MessageManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -77,6 +78,8 @@
 		37988C7229A63555008B5F8E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				37435EE029B12B8C00488202 /* MessageManager.swift */,
+				37435EE229B130FE00488202 /* ChatbotViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37435EE329B130FE00488202 /* ChatbotViewModel.swift in Sources */,
 				37435EE129B12B8C00488202 /* MessageManager.swift in Sources */,
 				37C00A7B29A6290500CCF49B /* Persistence.swift in Sources */,
 				37988C7829A6378A008B5F8E /* ChatbotView.swift in Sources */,
