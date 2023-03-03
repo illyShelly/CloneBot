@@ -40,7 +40,7 @@ extension ChatbotViewModel {
 //
 //
             // Appointment - How do we redirect to the website?
-            Message(id: "12", contents: ["Last but not least. Have you already booked your appointment?"], options: [.init(key: "13", answer: "Yes"), .init(key: "14", answer: "No")]),
+            Message(id: "12", contents: ["Last but not least. \nHave you already booked your appointment?"], options: [.init(key: "13", answer: "Yes"), .init(key: "14", answer: "No")]),
             
             // yes - booked
             Message(id: "13", contents: ["Looks like, you are all set.", "Wish you a lot of luck."], options: [.init(key: "16", answer: "Thank you. Bye")]), // end of

@@ -12,7 +12,8 @@ struct ChatbotView: View {
     @StateObject var chatbotVM: ChatbotViewModel = ChatbotViewModel()
 
     @State var userChoice: String = ""
-    
+    let greeting: LocalizedStringKey = "greeting"
+
     var body: some View {
         VStack {
             //  Show welcome title
@@ -21,7 +22,7 @@ struct ChatbotView: View {
                     .foregroundColor(.pink)
                     .font(.title)
                     .fontWeight(.semibold)
-                Text("Re-Turn")
+                Text("greeting")
                     .font(.title)
                     .foregroundColor(.indigo)
                     .fontWeight(.bold)

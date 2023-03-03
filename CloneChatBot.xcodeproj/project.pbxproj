@@ -20,6 +20,7 @@
 		37C00A7929A6290500CCF49B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C00A7829A6290500CCF49B /* Preview Assets.xcassets */; };
 		37C00A7B29A6290500CCF49B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C00A7A29A6290500CCF49B /* Persistence.swift */; };
 		37C00A7E29A6290500CCF49B /* CloneChatBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37C00A7C29A6290500CCF49B /* CloneChatBot.xcdatamodeld */; };
+		37FA0E1029B28B3200365909 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37FA0E1229B28B3200365909 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,9 @@
 		37C00A7829A6290500CCF49B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37C00A7A29A6290500CCF49B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		37C00A7D29A6290500CCF49B /* CloneChatBot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloneChatBot.xcdatamodel; sourceTree = "<group>"; };
+		37FA0E1129B28B3200365909 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37FA0E1329B28B4600365909 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37FA0E1429B28B4800365909 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,8 @@
 		37988C7229A63555008B5F8E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				37435EE029B12B8C00488202 /* MessageManager.swift */,
 				37435EE229B130FE00488202 /* ChatbotViewModel.swift */,
+				37435EE029B12B8C00488202 /* MessageManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -87,6 +91,7 @@
 		37C00A6529A6290400CCF49B = {
 			isa = PBXGroup;
 			children = (
+				37FA0E1229B28B3200365909 /* Localizable.strings */,
 				37C00A7029A6290400CCF49B /* CloneChatBot */,
 				37C00A6F29A6290400CCF49B /* Products */,
 			);
@@ -168,6 +173,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				fr,
 			);
 			mainGroup = 37C00A6529A6290400CCF49B;
 			productRefGroup = 37C00A6F29A6290400CCF49B /* Products */;
@@ -185,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37C00A7929A6290500CCF49B /* Preview Assets.xcassets in Resources */,
+				37FA0E1029B28B3200365909 /* Localizable.strings in Resources */,
 				37988C6F29A634C4008B5F8E /* Message.json in Resources */,
 				37C00A7629A6290500CCF49B /* Assets.xcassets in Resources */,
 			);
@@ -211,6 +219,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		37FA0E1229B28B3200365909 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37FA0E1129B28B3200365909 /* en */,
+				37FA0E1329B28B4600365909 /* fr */,
+				37FA0E1429B28B4800365909 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		37C00A7F29A6290500CCF49B /* Debug */ = {
