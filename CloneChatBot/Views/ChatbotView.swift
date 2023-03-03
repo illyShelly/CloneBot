@@ -10,11 +10,6 @@ import SwiftUI
 struct ChatbotView: View {
     //    Initialize ChatbotVM
     @StateObject var chatbotVM: ChatbotViewModel = ChatbotViewModel()
-    
-//    @State var currentMessage: Message = Message(id: "0", contents: ["Welcome To Our Chatbot"], owner: .bot, options: [.init(key: "1", answer: "Hello!")])
-    
-//    @State var bubbles: [Bubble] = [Bubble(info: "Welcome To Our Chatbot")]
-//    @State var bubbles: [Bubble] = [] // moved as Published into VM
 
     @State var userChoice: String = ""
     
@@ -34,8 +29,6 @@ struct ChatbotView: View {
 
             //  Show scrolling text
             ScrollView {
-//                Text(currentMessage.contents.first ?? "Welcome")
-                //Text(currentMessage.owner.rawValue) // as default is 'bot'
                 ForEach(chatbotVM.bubbles) { bubble in
                     if let sender = bubble.who {
                         switch sender {
@@ -151,17 +144,6 @@ struct ChatbotView: View {
     }
        
 }
-    
-//enum Sender {
-//    case bot
-//    case user
-//}
-//    
-//struct Bubble: Identifiable {
-//    var id: String = "\(UUID())"
-//    var info: String
-//    var who: Sender = .bot
-//}
 
 struct ChatbotView_Previews: PreviewProvider {
     static var previews: some View {
