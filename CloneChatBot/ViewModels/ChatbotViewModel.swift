@@ -20,7 +20,7 @@ struct Bubble: Identifiable {
 
 class ChatbotViewModel: ObservableObject {
     @Published var database: [Message] // declare var
-    @Published var bubbles: [Bubble] = [Bubble(info: "Welcome, Bro, we are here to help you.")]
+    @Published var bubbles: [Bubble] = [Bubble(info: "Welcome 😉")]
     @Published var currentMessage: Message = Message(id: "0", contents: ["Welcome To Our Chatbot"], owner: .bot, options: [.init(key: "1", answer: "Hello!")])
     
 //    @Published var userChoice: String = ""
@@ -50,7 +50,7 @@ class ChatbotViewModel: ObservableObject {
                 // Create bubble/s related to current message content
             for note in self.currentMessage.contents {
                 self.bubbles.append(Bubble(info: note, who: .bot))
-                }
+            }
         }
     }
 }

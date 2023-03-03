@@ -105,8 +105,8 @@
 			children = (
 				37C00A7129A6290400CCF49B /* CloneChatBotApp.swift */,
 				3732664729A7EA5100B77358 /* Extentions */,
-				37988C7129A6354C008B5F8E /* Models */,
 				37988C7229A63555008B5F8E /* ViewModels */,
+				37988C7129A6354C008B5F8E /* Models */,
 				37988C7029A63539008B5F8E /* Views */,
 				37C00A7529A6290500CCF49B /* Assets.xcassets */,
 				37C00A7329A6290400CCF49B /* ContentView.swift */,

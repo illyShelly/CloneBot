@@ -16,7 +16,7 @@ struct CloneChatBotApp: App {
 //            let notes = try? 
             ChatbotView(chatbotVM: ChatbotViewModel.mock)
 //            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
