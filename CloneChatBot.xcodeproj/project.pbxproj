@@ -41,6 +41,8 @@
 		37FA0E1129B28B3200365909 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37FA0E1329B28B4600365909 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37FA0E1429B28B4800365909 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37FA0E1529B28E2400365909 /* Playground_ru.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_ru.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		37FA0E1629B28E3800365909 /* Playground_fr.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_fr.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,8 @@
 				37C00A7C29A6290500CCF49B /* CloneChatBot.xcdatamodeld */,
 				37988C6E29A634C4008B5F8E /* Message.json */,
 				37C00A7729A6290500CCF49B /* Preview Content */,
+				37FA0E1529B28E2400365909 /* Playground_ru.playground */,
+				37FA0E1629B28E3800365909 /* Playground_fr.playground */,
 			);
 			path = CloneChatBot;
 			sourceTree = "<group>";
