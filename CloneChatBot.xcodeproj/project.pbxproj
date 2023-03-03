@@ -30,7 +30,7 @@
 		37988C7329A63584008B5F8E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		37988C7529A6362B008B5F8E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		37988C7729A6378A008B5F8E /* ChatbotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotView.swift; sourceTree = "<group>"; };
-		37C00A6E29A6290400CCF49B /* Struffoli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Struffoli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C00A6E29A6290400CCF49B /* Make It Easy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make It Easy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C00A7129A6290400CCF49B /* CloneChatBotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneChatBotApp.swift; sourceTree = "<group>"; };
 		37C00A7329A6290400CCF49B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37C00A7529A6290500CCF49B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		37C00A6F29A6290400CCF49B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37C00A6E29A6290400CCF49B /* Struffoli.app */,
+				37C00A6E29A6290400CCF49B /* Make It Easy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			);
 			name = CloneChatBot;
 			productName = CloneChatBot;
-			productReference = 37C00A6E29A6290400CCF49B /* Struffoli.app */;
+			productReference = 37C00A6E29A6290400CCF49B /* Make It Easy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -338,7 +338,7 @@
 				DEVELOPMENT_TEAM = 4S4D574GC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Struffoli;
+				INFOPLIST_KEY_CFBundleDisplayName = "Make It Easy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -352,7 +352,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illyShelly.CloneChatBot;
-				PRODUCT_NAME = Struffoli;
+				PRODUCT_NAME = "Make It Easy";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +370,7 @@
 				DEVELOPMENT_TEAM = 4S4D574GC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Struffoli;
+				INFOPLIST_KEY_CFBundleDisplayName = "Make It Easy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -384,7 +384,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.illyShelly.CloneChatBot;
-				PRODUCT_NAME = Struffoli;
+				PRODUCT_NAME = "Make It Easy";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
