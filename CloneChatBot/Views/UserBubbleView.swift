@@ -31,6 +31,7 @@ struct UserBubbleView: View {
 
 struct UserBubbleView_Previews: PreviewProvider {
     static var previews: some View {
-        UserBubbleView(chatbotVM: ChatbotViewModel(database: [Message(id: "1", contents: ["Nice to meet you."])]), userOption: Reply(key: "2", answer: "Hi"))
+        UserBubbleView(chatbotVM: ChatbotViewModel(database: [Message(id: "1", contents: ["Whatever here"])]), userOption: Reply(key: "2", answer: "French"))
+            .bubbleStyle(customColor: .red, customFont: 18)
     }
 }
