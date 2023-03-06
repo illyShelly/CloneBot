@@ -11,7 +11,8 @@ struct ChatbotView: View {
     //    Initialize ChatbotVM
     @StateObject var chatbotVM: ChatbotViewModel = ChatbotViewModel()
 
-    @State var userChoice: String = ""
+//    @State var userChoice: String = "" // pass into next view
+    
     let greeting: LocalizedStringKey = "greeting"
 
     var body: some View {
@@ -70,35 +71,16 @@ struct ChatbotView: View {
                         switch userOptions.count {
                         case 1:
                             VStack {
-                                Button {
-                                    // Post clicked content as message
-                                    withAnimation(.linear(duration: 0.35)) {
-                                        chatbotVM.postMessage(message: option.answer, sender: .user)
-                                    }
-                                    userChoice = option.key // "3"
-                                //  Assign a nextMessage into currentMessage
-                                    chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
-                                } label: {
-                                    Text(option.answer)
-                                }
-                                .bubbleStyle(customColor: .systemIndigo, customFont: 19)
+                                UserBubbleView(chatbotVM: chatbotVM, userOption: option)
+                                
+                                    .bubbleStyle(customColor: .systemIndigo, customFont: 19)
+                                
                             }
                         default:
                             // More buttons
                             HStack {
-                                Button {
-                                    // Post clicked content as message
-                                    withAnimation(.default) {
-                                        chatbotVM.postMessage(message: option.answer, sender: .user)
-                                    }
-                                    userChoice = option.key
-                                    chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
-                                } label: {
-                                    Text(option.answer)
-                                }
-                                .bubbleStyle(customColor: .systemPink, customFont: 19)
-                                .cornerRadius(5)
-                                .padding(.trailing, 5) // space between btns
+                                UserBubbleView(chatbotVM: chatbotVM, userOption: option)
+                                    .bubbleStyle(customColor: .systemPink, customFont: 18.5)
                             }
                         }
                     } // foreach
