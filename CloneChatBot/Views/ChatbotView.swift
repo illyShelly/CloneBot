@@ -36,16 +36,8 @@ struct ChatbotView: View {
                         case .bot:
                             HStack {
                                 Text(bubble.info)
-                                    .padding(.horizontal, 15)
-                                    .padding(.vertical, 10)
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.white)
-                                
-                                // Bubble style related
-                                    .background(.teal.opacity(1.0))
-                                    .cornerRadius(10.0) // under background
-                                // Padding around bubble
-                                    .padding(.horizontal, 15)
+                                    .bubbleStyle(customColor: .systemTeal, customFont: 18)
+                                    .padding(.horizontal, 15) // Padding around bubble
                                     .padding(.bottom, 20)
                                 Spacer()
                             }
@@ -53,14 +45,7 @@ struct ChatbotView: View {
                             HStack {
                                 Spacer()
                                 Text(bubble.info)
-                                    .padding(.horizontal, 15)
-                                    .padding(.vertical, 10)
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.white)
-                                
-                                    .background(.indigo.opacity(1.0))
-                                    .cornerRadius(10.0)
-                                // padding around bubble
+                                    .bubbleStyle(customColor: .systemIndigo, customFont: 18)
                                     .padding(.horizontal, 15)
                                     .padding(.bottom, 20)
                             }
@@ -72,7 +57,6 @@ struct ChatbotView: View {
                 .rotationEffect(.degrees(180.0)) // flip upside down text
             }
             .rotationEffect(.degrees(180.0)) // start chat from button screen
-//            .background(Color.init(uiColor: .systemGray6))
             .background(.gray.opacity(0.07))
 
 
@@ -91,22 +75,13 @@ struct ChatbotView: View {
                                     withAnimation(.linear(duration: 0.35)) {
                                         chatbotVM.postMessage(message: option.answer, sender: .user)
                                     }
-                                   
-                                    userChoice = option.key
+                                    userChoice = option.key // "3"
                                 //  Assign a nextMessage into currentMessage
                                     chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
-                                    userChoice = ""
                                 } label: {
                                     Text(option.answer)
                                 }
-                                .padding(.horizontal, 15)
-                                .padding(.vertical, 10)
-                                .foregroundColor(.white)
-                                .font(.system(size: 19))
-                                
-                                .background(.indigo)
-                                .cornerRadius(10)
-
+                                .bubbleStyle(customColor: .systemIndigo, customFont: 19)
                             }
                         default:
                             // More buttons
@@ -117,20 +92,12 @@ struct ChatbotView: View {
                                         chatbotVM.postMessage(message: option.answer, sender: .user)
                                     }
                                     userChoice = option.key
-                                //  Assign a nextMessage into currentMessage
                                     chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
-                                    userChoice = ""
                                 } label: {
                                     Text(option.answer)
                                 }
-                                .padding(.horizontal, 15)
-                                .padding(.vertical, 10)
-                                .foregroundColor(.white)
-                                .font(.system(size: 19))
-
-                                .background(.pink)
+                                .bubbleStyle(customColor: .systemPink, customFont: 19)
                                 .cornerRadius(5)
-                                // smaller font for more btns
                                 .padding(.trailing, 5) // space between btns
                             }
                         }
@@ -138,7 +105,6 @@ struct ChatbotView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: 80)
-//            .background(Color.init(uiColor: .systemGray6))
 //            .background(.gray.opacity(0.20))
 
         } // Main VS
