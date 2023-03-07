@@ -13,6 +13,8 @@ struct UserBubbleView: View {
     @State var userChoice: String = ""
     @State var userOption: Reply
     
+    var url: String = "https://prenotazioneweb.agenziaentrate.gov.it/PrenotazioneWeb/prenotazione.action"
+    
     var body: some View {
 //        Moved button with methods from ChatbotView
         Button {
@@ -24,7 +26,12 @@ struct UserBubbleView: View {
         //  Assign a nextMessage into currentMessage
             chatbotVM.currentMessage = chatbotVM.getNextMessage(choice: userChoice)
         } label: {
-            Text(userOption.answer)
+            // Redirect to make appointment on oficial website - do not use 'userChoice'
+            if userOption.key != "16" {
+                Text(userOption.answer)
+            } else {
+                Link("\(userOption.answer)", destination: URL(string: url)!)
+            }
         }
     }
 }
