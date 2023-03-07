@@ -20,10 +20,9 @@ struct Bubble: Identifiable {
 
 class ChatbotViewModel: ObservableObject {
     @Published var database: [Message] // declare var
-    @Published var bubbles: [Bubble] = [Bubble(info: "Make It Easy Chatbot 😉")]
-    @Published var currentMessage: Message = Message(id: "0", contents: ["Welcome To Our Chatbot"], owner: .bot, options: [.init(key: "1", answer: "Hello!")])
-    
-//    @Published var userChoice: String = ""
+    @Published var bubbles: [Bubble] = [] // [Bubble(info: "Make It Easy Chatbot 😉")]
+    @Published var currentMessage: Message = Message(id: "0", contents: ["😉"], owner: .bot, options: [.init(key: "1", answer: "Make It Easy Chatbot 😉")]) // First User Button & Message/bubble created
+        
     
     // The same as: var database: [Message] = []
     init(database: [Message] = []) { // init as empty arr
