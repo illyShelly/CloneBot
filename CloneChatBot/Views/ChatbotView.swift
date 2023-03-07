@@ -74,7 +74,6 @@ struct ChatbotView: View {
                                 UserBubbleView(chatbotVM: chatbotVM, userOption: option)
                                 
                                     .bubbleStyle(customColor: .systemIndigo, customFont: 19)
-                                
                             }
                         default:
                             // More buttons
