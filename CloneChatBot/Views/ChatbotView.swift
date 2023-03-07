@@ -71,14 +71,14 @@ struct ChatbotView: View {
                         switch userOptions.count {
                         case 1:
                             VStack {
-                                UserBubbleView(chatbotVM: chatbotVM, userOption: option)
+                                UserButtonView(chatbotVM: chatbotVM, userOption: option)
                                 
                                     .bubbleStyle(customColor: .systemIndigo, customFont: 19)
                             }
                         default:
                             // More buttons
                             HStack {
-                                UserBubbleView(chatbotVM: chatbotVM, userOption: option)
+                                UserButtonView(chatbotVM: chatbotVM, userOption: option)
                                     .bubbleStyle(customColor: .systemPink, customFont: 18.5)
                             }
                         }

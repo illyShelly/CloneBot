@@ -1,5 +1,5 @@
 //
-//  UserBubbleView.swift
+//  UserButtonView.swift
 //  CloneChatBot
 //
 //  Created by Ilona Sellenberkova on 06/03/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserBubbleView: View {
+struct UserButtonView: View {
     @ObservedObject var chatbotVM: ChatbotViewModel // pass VM into other screen
     
     @State var userChoice: String = ""
@@ -36,9 +36,9 @@ struct UserBubbleView: View {
     }
 }
 
-struct UserBubbleView_Previews: PreviewProvider {
+struct UserButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        UserBubbleView(chatbotVM: ChatbotViewModel(database: [Message(id: "1", contents: ["Whatever here"])]), userOption: Reply(key: "2", answer: "French"))
+        UserButtonView(chatbotVM: ChatbotViewModel(database: [Message(id: "1", contents: ["Whatever here"])]), userOption: Reply(key: "2", answer: "French"))
             .bubbleStyle(customColor: .red, customFont: 18)
     }
 }
