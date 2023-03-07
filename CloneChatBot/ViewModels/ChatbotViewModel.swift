@@ -7,16 +7,6 @@
 
 import Foundation
 
-enum Sender {
-    case bot
-    case user
-}
-    
-struct Bubble: Identifiable {
-    var id: String = "\(UUID())"
-    var info: String
-    var who: Sender = .bot
-}
 
 class ChatbotViewModel: ObservableObject {
     @Published var database: [Message] // declare var
