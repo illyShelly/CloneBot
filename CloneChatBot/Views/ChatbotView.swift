@@ -58,7 +58,7 @@ struct ChatbotView: View {
                 .rotationEffect(.degrees(180.0)) // flip upside down text
             }
             .rotationEffect(.degrees(180.0)) // start chat from button screen
-            .background(.gray.opacity(0.07))
+            .background(.gray.opacity(0.09))
 
 
             //  User's answer - based on options of current message
